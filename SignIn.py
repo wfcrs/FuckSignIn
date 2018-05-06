@@ -33,7 +33,7 @@ while(1):
         browser.find_element_by_class_name("error-infor")
         break
     except Exception as e:
-        StrTemp = (str(ID) + "\t" + browser.find_element_by_class_name("create-tag-top").text + "\t" + browser.find_element_by_class_name("flowexp").text + "\t")
+        StrTemp = (str(ID) + "\t" + browser.find_element_by_class_name("create-tag-top").text + "\t" + browser.find_element_by_class_name("flowexp").text.replace("\n"," ") + "\t")
         TimeTemp = browser.find_elements_by_class_name("font-time-color")
         StrTemp += (TimeTemp[0].text + "-" + TimeTemp[-1].text)
         print(StrTemp)
